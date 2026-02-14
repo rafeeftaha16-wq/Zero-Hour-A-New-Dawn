@@ -256,21 +256,31 @@
         </div>
     </div>
 
-    <script>
-        // Optional: Add keyboard listener to trigger next action
+        <script>
+        // Game Start Function
+        function startGame() {
+            const container = document.querySelector('.container');
+            container.style.transition = 'opacity 0.5s ease-out';
+            container.style.opacity = '0';
+            
+            setTimeout(() => {
+                document.body.innerHTML = '<div style="display: flex; align-items: center; justify-content: center; height: 100vh; font-family: Share Tech Mono, monospace; font-size: 2rem; text-align: center;"><div><p style="margin-bottom: 2rem;">GAME INITIALIZED</p><p style="font-size: 1.2rem; opacity: 0.7;">Loading corrupted world...</p><div style="margin-top: 2rem; font-size: 1rem; opacity: 0.5;">// AWAITING GAME ENGINE</div></div></div>';
+            }, 500);
+        }
+
+        // Listen for Enter keyS
         document.addEventListener('keydown', (event) => {
             if (event.key === 'Enter') {
-                // You can add your game start logic here
-                console.log('Game started!');
-                // Example: window.location.href = 'game.html';
+                startGame();
             }
         });
 
-        // Optional: Add click listener
+        // Listen for mouse click
         document.addEventListener('click', () => {
-            console.log('Screen clicked - ready to start game');
+            startGame();
         });
     </script>
+
 </body>
 </html>
 
